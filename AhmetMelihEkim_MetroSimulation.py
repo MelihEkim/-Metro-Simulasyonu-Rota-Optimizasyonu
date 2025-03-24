@@ -30,6 +30,8 @@ class MetroAgi:
         istasyon2.komsu_ekle(istasyon1, sure)
     
     def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[Istasyon]]:
+        """BFS algoritması ile en az aktarmalı rotayı bulur."""
+        
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
             return None
         
@@ -57,6 +59,8 @@ class MetroAgi:
         return None  # Rota bulunamazsa None döndürülür
 
     def en_hizli_rota_bul(self, baslangic_id: str, hedef_id: str) -> Optional[Tuple[List[Istasyon], int]]:
+        """A* algoritması ile en hızlı rotayı bulur."""
+        
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
             return None
         
